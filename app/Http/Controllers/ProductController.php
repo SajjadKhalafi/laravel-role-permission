@@ -58,7 +58,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        $this->authorize('view' , $product);
     }
 
     /**

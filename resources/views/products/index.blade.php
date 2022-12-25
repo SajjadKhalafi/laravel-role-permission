@@ -14,6 +14,7 @@
                         <tr>
                             <th>ID</th>
                             <th>Name</th>
+                            <th>Actions</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -21,6 +22,9 @@
                             <tr>
                                 <td>{{ $product->id }}</td>
                                 <td>{{ $product->name }}</td>
+                                <td>
+                                    <a href="{{ route('products.edit' , $product->id) }}" class="py-2 my-2">Edit</a>
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>
