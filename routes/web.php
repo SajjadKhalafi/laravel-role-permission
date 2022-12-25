@@ -32,7 +32,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('/products' , ProductController::class);
 });
 
-Route::middleware(['auth' , 'is_admin'])->prefix('/admin')->name('admin.')->group(function (){
+Route::middleware(['can:access-admin'])->prefix('/admin')->name('admin.')->group(function (){
     Route::get('/' , [AdminController::class , 'index'])->name('index');
     Route::resource('/products' , AdminProductController::class);
 });

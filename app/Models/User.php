@@ -51,6 +51,13 @@ class User extends Authenticatable
         );
     }
 
+    protected function isManager(): Attribute
+    {
+        return new Attribute(
+            get: fn() => $this->role_id == 4,
+        );
+    }
+
     public function products()
     {
         return $this->hasMany(Product::class);
